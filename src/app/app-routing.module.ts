@@ -10,6 +10,24 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'pelicula-list',
+    loadChildren: () => import('./pelicula/pelicula-list/pelicula-list.module').then( m => m.PeliculaListPageModule)
+  },
+
+  //se agrega esta parte de abajo.
+  {
+    path: 'pelicula-edit/:id',
+    loadChildren: () => 
+      import('./pelicula/pelicula-edit/pelicula-edit.module').then( 
+        m => m.PeliculaEditPageModule
+      ),
+  },
+
+  {
+    path: 'pelicula-edit',
+    loadChildren: () => import('./pelicula/pelicula-edit/pelicula-edit.module').then( m => m.PeliculaEditPageModule)
   }
 ];
 
